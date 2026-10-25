@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>V8 Engine Test Cell — Interactive 3D Simulation</title>
+<link rel="stylesheet" href="./css/style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<canvas id="scene"></canvas>
+
+<div id="hud"></div>
+
+<div id="hint">
+  <span id="hintText">Drag to orbit · Scroll to zoom · Click a part to inspect</span>
+</div>
+
+<div id="ui">
+  <div class="panel">
+    <div class="brand">
+      <span class="led" id="led"></span>
+      <span>V8 · ENGINE TEST CELL</span>
+    </div>
+
+    <div class="row">
+      <button id="btnStart" class="btn primary">START</button>
+      <button id="btnCam" class="btn">WALK MODE</button>
+    </div>
+
+    <div class="row between">
+      <span class="lbl">ENGINE SPEED</span>
+      <span class="readout"><b id="rpmVal">0</b> RPM</span>
+    </div>
+    <input id="rpm" type="range" min="0" max="4000" step="25" value="900" />
+
+    <div class="row">
+      <button id="btnCut" class="btn">CUTAWAY</button>
+      <button id="btnExp" class="btn">EXPLODED</button>
+    </div>
+
+    <div class="row">
+      <button id="btnAssemble" class="btn">ASSEMBLE</button>
+      <button id="btnSlow" class="btn">SLOW-MO</button>
+    </div>
+
+    <div class="row">
+      <button id="btnReset" class="btn wide">RESET CAMERA</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
